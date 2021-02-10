@@ -1,0 +1,261 @@
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600");
+$background-color: #06090f;
+$background-color-primary: #0d1117;
+
+$color-text-primary: #c9d1d9;
+$color-text-secondary: #8b949e;
+$color-text-link: #58a6ff;
+$color-border-primary: #30363d;
+$color-border-secondary: #21262d;
+
+$header-bg: #161b22;
+$font-list: "Source Sans Pro", "Roboto", "Helvetica", "Helvetica Neue",
+  "Source Han Sans SC", "Source Han Sans TC", "PingFang SC", "PingFang HK",
+  "PingFang TC", sans-serif;
+
+$header-height: 90px;
+$content-width: 85%;
+$seperator-height: 18px;
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.fa {
+    word-spacing: -100000px;
+}
+
+body {
+    font-family: $font-list;
+    background-color: $background-color;
+    color: $color-text-secondary;
+    width: $content-width;
+    margin: auto;
+    padding-top: $header-height + $seperator-height;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $color-text-primary;
+}
+
+.content {
+    background-color: $background-color-primary;
+    border: 1px $color-border-primary solid;
+    border-radius: 10px;
+    padding: 0px 15px;
+    margin-bottom: 15px;
+
+    &.article-archive {
+        .article-list-container {
+            .article-year-group {
+                color: $color-text-secondary;
+            }
+
+            .article-list {
+                padding-left: 15px;
+
+                .article-title {
+                    margin: 0px;
+                }
+
+                .article-date {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+pre {
+    background-color: $background-color-primary;
+    border: 1px $color-border-primary solid;
+    border-radius: 5px;
+}
+
+a {
+    color: $color-text-link;
+    cursor: pointer;
+    cursor: hand;
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
+
+header {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    padding: 0px 30px;
+    padding-left: 0px;
+    background-color: $background-color;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: $content-width;
+    margin: auto;
+
+    .social-container {
+        padding-right: 15px;
+        flex-direction: column;
+
+        .fa {
+            padding: 4px 0px;
+        }
+    }
+
+    .site-title {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .title {
+            font-weight: bolder;
+            font-family: "HiraMinProN-W6","Source Han Serif CN","Source Han Serif SC","Source Han Serif TC",serif;
+            font-size: 38px;
+        }
+
+        // span {
+
+        // }
+    }
+
+    @media (max-width: 768px) {
+        .title {
+            text-align: center;
+        }
+    }
+
+    nav {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        font-weight: bolder;
+
+        a {
+            // flex: 1 1 auto;
+            padding: 0px 10px;
+        }
+    }
+}
+
+.separator {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    width: $content-width;
+    margin: auto;
+    height: 8px;
+    // border-bottom: 2px solid $color-text-primary;
+    border-bottom: 2px solid $color-border-primary;
+    background-color: $background-color;
+
+    &.header-separator {
+        top: $header-height;
+    }
+
+    &.footer-separator {
+        border-top: 2px solid $color-border-primary;
+        border-bottom: none;
+        position: static;
+        width: 100%;
+    }
+}
+
+footer {
+    padding: 15px 0px;
+    padding-top: 0px;
+    text-align: center;
+    position: sticky;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: $background-color;
+}
+
+.social-container {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: $color-text-secondary;
+        transition: color ease-in-out 0.25s;
+
+        &:hover {
+            color: $color-text-link;
+        }
+    }
+
+    .fa {
+        font-size: 19px;
+        padding: 0px 4px;
+    }
+}
+
+article {
+    line-height: 25px;
+}
+
+code {
+    // color: #c7254e;
+    font-size: 90%;
+    background-color: rgba(240, 256, 252, 0.15);
+    // background-color: #f9f2f4;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+    &.hljs {
+        line-height: normal;
+    }
+}
+
+.tip {
+    // color: #c7254e;
+    // font-size: 90%;
+    // // background-color: #f9f2f4;
+    // padding: 2px 4px;
+    // border-radius: 4px;
+    // font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    cursor: help;
+}
+
+.post-content {
+    min-height: 360px;
+
+    h2 {
+        width: 256px;
+        text-align: center;
+    }
+
+    .profile-pic {
+        border-radius: 1000px;
+        width: 256px;
+        height: 256px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        float: left;
+    }
+}
+
+// ENABLING CORS SPECIFIC STUFF
+
+.preflight-image-container {
+    display: flex;
+
+    .preflight-image {
+        width: 80%;
+        margin: auto;
+        background-color: lightgray;
+    }
+}

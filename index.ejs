@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title><%= config.name %> | <%= context.title %></title>
+        <meta charset="utf-8" />
+        <meta name="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="<%= config.author %>" />
+        <% if (context['summary']) { %>
+        <meta name="description" content="<%= context.summary %>" />
+        <%} else { %>
+        <meta name="description" content="<%= config.description %>" />
+        <% } %>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="renderer" content="webkit" />
+        <link href="/tassets/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+        <link href="/tassets/style.css" type="text/css" rel="stylesheet" />
+        <link href="/assets/favicon.ico" type="image/x-icon" rel="short icon" />
+        <link href="/tassets/hljs/styles/darcula.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <%- include('header'); %>
+        <article class="content<% if (context['content-class']) { %> <%= context['content-class'] %><% } %>">
+            <%- content %>
+        </article>
+        <% if (context['post-content']) { %>
+            <section class="post-content content">
+                <%- include(stagen.getTemplateExtensionPath(context['post-content'])) %>
+            </section>
+        <% } %>
+        <%- include('footer'); %>
+        <script type="application/javascript" src="/tassets/hljs/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script type="application/javascript" src="/assets/google-analytics.js" defer></script>
+    </body>
+</html>

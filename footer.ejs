@@ -1,0 +1,10 @@
+<footer>
+    <div class="separator footer-separator">&nbsp;</div>
+    <div>
+        &copy; <%= config['copyright-name'] %> 2020 - <%= new Date().getFullYear(); %>. <% if (config.license) { %><%- include(stagen.getTemplateExtensionPath(config.license)) %><% } %><br />
+        <% if (config['privacy-policy']) { %>
+        Use of this website is subjected to the terms laid out in our <a href="<%= config['privacy-policy'] %>" title="Privacy Policy">Privacy Policy</a>.
+        <% } %>
+    </div>
+    <%- include('./social-links'); %>
+</footer>
