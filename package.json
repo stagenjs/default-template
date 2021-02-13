@@ -1,6 +1,6 @@
 {
   "name": "@stagen/default-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "publishConfig": {
@@ -12,7 +12,11 @@
   },
   "keywords": [
     "stagen",
-    "template"
+    "template",
+    "static",
+    "site",
+    "generator",
+    "unopinionated"
   ],
   "author": "norman@nbsolutions.ca",
   "license": "MIT"
