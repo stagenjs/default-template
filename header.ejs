@@ -5,8 +5,19 @@
         <span><%= config.description %></span>
     </div>
     <nav>
-        <a href="/" title="Home">Home</a>
-        <!-- <a href="/articles/index.html" title="Articles">Articles</a> -->
+        <% 
+        let navigation = config.navigation || [
+            {
+                url: '/',
+                title: 'Home',
+                label: 'Home'
+            }
+        ];
+        for (let i = 0; i < navigation.length; i++) {
+            let nav = navigation[i];
+        %>
+            <a href="<%= nav.url %>" title="<%= nav.title %>"><%= nav.label %></a>
+        <%}%>
     </nav>
 </header>
 <div class="separator header-separator">&nbsp;</div>
