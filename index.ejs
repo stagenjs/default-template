@@ -20,6 +20,16 @@
         <link href="/tassets/style.css" type="text/css" rel="stylesheet" />
         <link href="/assets/favicon.ico" type="image/x-icon" rel="short icon" />
         <link href="/tassets/hljs/styles/darcula.css" type="text/css" rel="stylesheet" />
+        <% if (context['gtag']) { %>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%= context.gtag %>"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '<%= context.gtag %>');
+        </script>
+        <% } %>
     </head>
     <body>
         <%- include('header'); %>
